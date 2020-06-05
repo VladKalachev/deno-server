@@ -1,10 +1,10 @@
-window.addEventListener('load', () => {
-    console.log('load');
-})
+window.addEventListener("load", () => {
+  console.log("load");
+});
 
-window.addEventListener('unload', () => {
-    console.log('unload');
-})
+window.addEventListener("unload", () => {
+  console.log("unload");
+});
 
 const url = Deno.args[0];
 console.log("Meking request to url = ", url);
@@ -13,6 +13,9 @@ const data = await response.json();
 
 console.log(data);
 
-await Deno.writeFile('data.json', new TextEncoder().encode(JSON.stringify(data)));
+await Deno.writeFile(
+  "data.json",
+  new TextEncoder().encode(JSON.stringify(data)),
+);
 
 // https://jsonplaceholder.typicode.com/todos/1
